@@ -61,13 +61,8 @@ router.get("/get_daily", async (req, res) => {
 router.get("/get_reminders", async (req, res) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (token) {
-    const daily = await Reminders.findOne({
-      where: {
-        user: {
-          id: token,
-        },
-      },
-    });
+    const user = await User.findOneOrFail(token);
+    const daily = await Reminders.findOne(user.reminders.id);
     if (daily) {
       res.send(daily);
     }
