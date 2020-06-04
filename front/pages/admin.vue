@@ -17,7 +17,7 @@
         </b-tab>
         <b-tab title="Posiłki">
           <div class="eat-title" v-for="meal in meals" :key="meal.id">
-            <h3>Nazwa: {{ meal.login }}</h3>
+            <h3>Nazwa: {{ meal.name }}</h3>
             <p>Kalorie: {{ meal.calories }}</p>
             <p>Skład: {{ meal.composition }}</p>
             <button @click="deleted(meal.id, 'meal')">X</button>
