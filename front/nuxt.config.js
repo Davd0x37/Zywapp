@@ -56,7 +56,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://localhost:5000'
+    baseURL: 'http://134.122.76.208:5000'
   },
   auth: {
     strategies: {
@@ -77,5 +77,8 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  server: {
+    host: '0.0.0.0'
   }
 }

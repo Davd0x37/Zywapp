@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "back",
+      "script": "app/app.ts",
+      "exec_mode": "fork",
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "interpreter": "./node_modules/.bin/ts-node",
+      "interpreter_args": "-P ./tsconfig.json -r ts-node/register/transpile-only -r tsconfig-paths/register"
+    }
+  ]
+}

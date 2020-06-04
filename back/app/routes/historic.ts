@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     const historicData = await HistoricData.getByUserIdDate(token, {
       date,
     });
-
+    // @ts-ignore
     const ids = historicData?.flatMap((val) => val.hd_mealsId);
     if (ids && ids.length > 0) {
       const meals = [];
