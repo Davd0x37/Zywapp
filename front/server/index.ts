@@ -1,5 +1,6 @@
 import express from 'express'
 import consola from 'consola'
+// @ts-ignore
 import { Nuxt, Builder } from 'nuxt'
 const app = express()
 

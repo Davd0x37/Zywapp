@@ -24,14 +24,14 @@
           >
         </vue-form>
       </div>
-      <div class="mid-right" v-if="!add">
+      <div class="mid-right" v-show="!add">
         <div class="spalone_kalorie">
           <p>
             {{ activityToRead }}
           </p>
         </div>
       </div>
-      <div class="mid-right" v-if="add">
+      <div class="mid-right" v-show="add">
         <div class="spalone_kalorie">
           <vue-form
             class="form"

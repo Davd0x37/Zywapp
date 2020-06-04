@@ -51,31 +51,35 @@ export default {
           const { parameters } = this.loggedInUser
           if (parameters) {
             const { godzina } = parameters
-            const [gdz, min] = godzina.split(':')
-            if (
-              this.currentTime.getHours() === Number(gdz) &&
-              this.currentTime.getMinutes() === Number(min)
-            ) {
-              const {
-                challenges,
-                exercises,
-                fluids,
-                microIngredients
-              } = this.loggedInUser.reminders
-              if (challenges) {
-                this.showReminder({ message: 'Pamiętaj o swoim wyzwaniu!' })
-              }
-              if (exercises) {
-                this.showReminder({ message: 'Pamiętaj o ćwiczeniach!' })
-              }
-              if (fluids) {
-                this.showReminder({ message: 'Pamiętaj aby uzupełniać płyny' })
-              }
-              if (microIngredients) {
-                this.showReminder({
-                  message:
-                    'Pamiętaj o odpowiednim przyjmowaniu makro/mikro składników'
-                })
+            if (godzina !== undefined) {
+              const [gdz, min] = godzina.split(':')
+              if (
+                this.currentTime.getHours() === Number(gdz) &&
+                this.currentTime.getMinutes() === Number(min)
+              ) {
+                const {
+                  challenges,
+                  exercises,
+                  fluids,
+                  microIngredients
+                } = this.loggedInUser.reminders
+                if (challenges) {
+                  this.showReminder({ message: 'Pamiętaj o swoim wyzwaniu!' })
+                }
+                if (exercises) {
+                  this.showReminder({ message: 'Pamiętaj o ćwiczeniach!' })
+                }
+                if (fluids) {
+                  this.showReminder({
+                    message: 'Pamiętaj aby uzupełniać płyny'
+                  })
+                }
+                if (microIngredients) {
+                  this.showReminder({
+                    message:
+                      'Pamiętaj o odpowiednim przyjmowaniu makro/mikro składników'
+                  })
+                }
               }
             }
           }

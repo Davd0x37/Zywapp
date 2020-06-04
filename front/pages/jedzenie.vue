@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="right-mid bckg" v-if="add">
+    <div class="right-mid bckg" v-show="add">
       <vue-form
         class="search dir"
         :state="formstate"
@@ -133,7 +133,7 @@
         <button type="submit">Dodaj</button>
       </vue-form>
     </div>
-    <div v-if="!add" class="right-mid">
+    <div v-show="!add" class="right-mid">
       <img src="~assets/img/foods-3520938_960_720.png" alt="" />
     </div>
   </div>

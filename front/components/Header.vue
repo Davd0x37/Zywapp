@@ -10,7 +10,7 @@
         <p>aŻywieniowa</p>
       </nuxt-link>
     </div>
-    <div class="top-right" v-if="!isAuthenticated">
+    <div class="top-right" v-show="!isAuthenticated">
       <nuxt-link to="/login">Logowanie</nuxt-link>
       <img
         class="arrowImg"
@@ -19,7 +19,7 @@
       />
       <nuxt-link to="/rejestracja">Rejestracja</nuxt-link>
     </div>
-    <div class="navbar-item has-dropdown is-hoverable" v-if="isAuthenticated">
+    <div class="navbar-item has-dropdown is-hoverable" v-show="isAuthenticated">
       <a class="navbar-link">
         {{ loggedInUser.login }} | {{ loggedInUser.accountType }}
       </a>
@@ -27,7 +27,7 @@
         <a class="navbar-link">
           {{ loggedInUser.isAdmin ? 'Admin' : 'Użytkownik' }}
         </a>
-        <nuxt-link class="navbar-item" to="/admin" v-if="loggedInUser.isAdmin"
+        <nuxt-link class="navbar-item" to="/admin" v-show="loggedInUser.isAdmin"
           >Panel administratora</nuxt-link
         >
         <hr class="navbar-divider" />
@@ -40,6 +40,7 @@
 </template>
 
 <script lang="ts">
+// @ts-nocheck
 import { mapGetters } from 'vuex'
 
 export default {

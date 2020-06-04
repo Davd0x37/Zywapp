@@ -18,10 +18,10 @@ export const state = () => ({
 })
 
 export const mutations = {
-  daily(state) {
+  daily(state: any) {
     state.daily = !state.daily
   },
-  updateUser(state, payload) {
+  updateUser(state: any, payload: any) {
     state.auth.user = {
       ...state.auth.user,
       ...payload
@@ -30,11 +30,11 @@ export const mutations = {
 }
 
 export const getters = {
-  isAuthenticated(state) {
+  isAuthenticated(state: any) {
     return state.auth.loggedIn
   },
 
-  loggedInUser(state) {
+  loggedInUser(state: any) {
     return state.auth.user
   }
 }

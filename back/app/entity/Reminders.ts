@@ -36,14 +36,15 @@ export class Reminders extends BaseEntity {
 
       const user = await User.getById(id);
       if (user) {
-        let reminder = await Reminders.findOne({ where: { user: { id } } });
+        // @ts-ignore
+        let reminder = await Reminders.findOne(user.remindersId);
         reminder = new Reminders();
         reminder.fluids = update.fluids ?? false;
         reminder.microIngredients = update.microIngredients ?? false;
         reminder.hours = update.hours ?? false;
         reminder.challenges = update.challenges ?? false;
         reminder.exercises = update.exercises ?? false;
-        reminder.user = user;
+        // reminder.user = user;
 
         reminderRepo.save(reminder);
         user.reminders = reminder;
